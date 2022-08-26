@@ -73,13 +73,11 @@ form button{
 a{
     color: black;
 }
-
 @media screen and (max-width:950px){
     li{
         width: 80%;
     }
 }
-
 @media screen and (max-width:500px){
     li{
         width: 90%;
