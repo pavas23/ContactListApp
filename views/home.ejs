@@ -8,24 +8,24 @@
         <!-- give path relative to assets folder as middleware already serves assets folder u need to tell further path otherwise it will be assets/assets/css/ -->
     </head>
     <body>
-        <h1 id="main-heading"><i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;My contacts list</h1>
+        <h1 id="main-heading"><i class="fa-solid fa-address-book"></i>&nbsp;&nbsp;My Contacts List</h1>
         <div>
             <% var len = contacts_list.length; %>
             <ul>
                 <% for(let i=0;i<len;i++){%>
                 <li> 
-                    <p style="margin-left: -7vw;"><i class="fa-solid fa-user"></i></p>
-                    <p style="margin-left: -13vw;"><%= contacts_list[i].name %></p>
+                    <p style="margin-left: -5vw;"><i class="fa-solid fa-user"></i></p>
+                    <p style="margin-left: -10vw;"><%= contacts_list[i].name %></p>
                     <p><%= contacts_list[i].phone %></p>
-                    <p style="margin-right: -7vw;">
-                    <a href = "/delete-contact/?id=<%=contacts_list[i].id%>"><i id="delete-btn" class="fa-solid fa-trash-can"></i></a></p>
+                    <p style="margin-right: -5vw;">
+                    <a href = "/delete-contact/?_id=<%=contacts_list[i]._id%>"><i id="delete-btn" class="fa-solid fa-trash-can"></i></a></p>
                 </li>
             <% } %> 
             </ul>
         </div>
 
         <form action="http://localhost:8000/create-contact" method="POST">
-            <input type = "text" name = "name" placeholder="Enter Name" required>
+            <input type = "text" name = "name" placeholder="Enter Name" required maxlength="11">
             <input type = "number" name = "phone" placeholder="Enter Phone Number" required minlength="10" maxlength="10">
             <button type = "submit">Add Contact</button>
         </form>
